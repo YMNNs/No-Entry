@@ -1,0 +1,95 @@
+button{
+	width:200px;
+	height:60px;
+	font-size: 25px;
+	background-color:#21bf73 ;
+	color: white;
+	border:none;
+	border-radius: 10px;
+}
+
+.form_1{
+	width:80%;
+	height:80%;
+	border:3px solid gray;
+	visibility: hidden;
+	position: absolute;
+	z-index: 999;
+	opacity: 1;
+	overflow: hidden;
+	background-color: #B3B3B3;
+	box-shadow: 0 15px 25px rgba(0,20,80,.5);
+	text-align: center;
+	margin-top: 10%;
+	margin-left: 6%;
+	border-radius: 10px;
+}
+
+.open{
+	visibility: visible;
+	opacity: 1;
+}
+
+.input_1{
+	margin-top: 15px;
+	width:100%;
+	height:40px;
+}
+
+input{
+	width:75%;
+	height:30px;
+	border-radius: 5px;
+	border:1px solid  #e5dfdf;
+}
+
+.input_1 .login_logo{
+	text-align: left;
+	font-size: 20px;
+	font-weight: 300;
+	padding-left: 30px;
+	float: left;
+	color: #fff;
+}
+
+.input_1 .close{
+	width: 20px;
+	height: 20px;
+	color: black;
+	text-align: center;
+	line-height: 20px;
+	border:2px solid  #5d5d5d;
+	border-radius: 50%;
+	float: right;
+	padding-top: 0px;
+	margin-right: 10px;
+	font-size: 12px;
+}
+
+.input_1 .close:hover{
+	cursor:pointer;
+}
+
+hr{
+	background-color: #F8F8F8;
+}
+
+.input_1 .submit_1{
+	margin-top: 5px;
+	border:2px solid;
+	height:40px;
+	background-color: lightblue;
+}
+
+.input_1 .submit_1:hover{
+	background-color: #f88020;
+	color:white;
+}
+
+.select_1{
+	margin-top: 10px;
+	border:2px;
+	width: 75%;
+	height:30px;
+	border-radius: 5px;
+}
