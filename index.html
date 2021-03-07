@@ -37,137 +37,116 @@
         .list-group-item {
             font-size: 1.4em;
             padding: 0.1em;
-            border: 0px;
+            border: 0;
         }
     </style>
     <script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script>
     <script type="text/javascript" charset="utf-8"
-        src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script>
+            src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script>
 </head>
 
 <body onload="setTime()">
-    <div id="app">
-        <div class="card border-0 text-center" style="color: #006633">
-            <div class="card-body">
-                <h2 class="card-title p-2">东北大学通行验证</h2>
-                <div class="main">
-                    <div class="form_1">
-                        <form>
-                            <div class="input_1">
-                                <div class="login_logo">用户信息</div>
-                                <div class="close">X</div>
-                            </div>
-                            <hr>
-                            <div class="input_1"><input type="text" id="input_id" placeholder="&nbsp;学工号"></div>
-                            <div class="input_1"><input type="text" id="input_name" placeholder="&nbsp;姓名"></div>
-                            <select class="select_1" id="input_location">
-                                <option value="浑南校区西门">浑南校区西门</option>
-                                <option value="浑南校区东门">浑南校区东门</option>
-                                <option value="浑南校区学生浴池">浑南校区学生浴池</option>
-                            </select>
-                            <div class="input_1"><input class="submit_1" type="button" value="提&nbsp;交"
-                                    onclick="setInfo()"></div>
-                        </form>
-                    </div>
+<div id="app">
+    <div class="card border-0 text-center" style="color: #006633">
+        <div class="card-body">
+            <h2 class="card-title p-2">东北大学通行验证</h2>
+            <div class="main">
+                <div class="form_1">
+                    <form>
+                        <div class="input_1">
+                            <div class="login_logo">用户信息</div>
+                            <div class="close">X</div>
+                        </div>
+                        <hr>
+                        <div class="input_1"><input type="text" id="input_id" placeholder="&nbsp;学工号"></div>
+                        <div class="input_1"><input type="text" id="input_name" placeholder="&nbsp;姓名"></div>
+                        <select class="select_1" id="input_location">
+                            <option value="浑南校区西门">浑南校区西门</option>
+                            <option value="浑南校区东门">浑南校区东门</option>
+                            <option value="浑南校区学生浴池">浑南校区学生浴池</option>
+                        </select>
+                        <div class="input_1"><input class="submit_1" type="button" value="提&nbsp;交"
+                                                    onclick="setInfo()"></div>
+                    </form>
                 </div>
-                <div class="animated infinite pulse p-2">
-                    <i class="fas fa-arrow-circle-up" style="font-size: 14em;"></i>
-                </div>
-                <p class="card-text p-2" style="font-size: 1.3em;">
-                    时间：<span id="nowDateTimeSpan"></span>
-                </p>
             </div>
+            <div class="animated infinite pulse p-2">
+                <i class="fas fa-arrow-circle-up" style="font-size: 14em;"></i>
+            </div>
+            <p class="card-text p-2" style="font-size: 1.3em;">
+                时间：<span id="nowDateTimeSpan"></span>
+            </p>
         </div>
-        <ul class="list-group list-group-flush" style="background-color: #006633">
-            <li class="list-group-item bg-transparent text-white d-flex">
-                <div style="min-width: 4em; text-align-last: justify;">学工号</div>：<div id="stuId">xxx</div>
-            </li>
-            <li class="list-group-item bg-transparent text-white d-flex">
-                <div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div id="stuName">xxx</div>
-            </li>
-            <li class="list-group-item bg-transparent text-white d-flex">
-                <div style="min-width: 4em; text-align-last: justify;">验证位置</div>：<div id="location">xxx</div>
-            </li>
-            <li class="list-group-item bg-transparent text-white d-flex">
-                <div style="min-width: 4em; text-align-last: justify;">进出状态</div>：<div>进入</div>
-            </li>
-        </ul>
     </div>
-    <script language="JavaScript">
-        function setTime() {
-            //
-            bombBox();
-            var today = new Date();//定义日期对象
-            var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年
-            var MM = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
-            var dd = today.getDate();//通过日期对象的getDate()方法返回年
-            var hh = today.getHours();//通过日期对象的getHours方法返回小时
-            var mm = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
-            var ss = today.getSeconds();//通过日期对象的getSeconds方法返回秒
-            MM = checkTime(MM);
-            dd = checkTime(dd);
-            mm = checkTime(mm);
-            ss = checkTime(ss);
-            document.getElementById('nowDateTimeSpan').innerHTML = yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
+    <ul class="list-group list-group-flush" style="background-color: #006633">
+        <li class="list-group-item bg-transparent text-white d-flex">
+            <div style="min-width: 4em; text-align-last: justify;">学工号</div>
+            ：
+            <div id="stuId">xxx</div>
+        </li>
+        <li class="list-group-item bg-transparent text-white d-flex">
+            <div style="min-width: 4em; text-align-last: justify;">姓名</div>
+            ：
+            <div id="stuName">xxx</div>
+        </li>
+        <li class="list-group-item bg-transparent text-white d-flex">
+            <div style="min-width: 4em; text-align-last: justify;">验证位置</div>
+            ：
+            <div id="location">xxx</div>
+        </li>
+        <li class="list-group-item bg-transparent text-white d-flex">
+            <div style="min-width: 4em; text-align-last: justify;">进出状态</div>
+            ：
+            <div>进入</div>
+        </li>
+    </ul>
+</div>
+<script>
+    function setTime() {
+        //
+        bombBox();
+        var today = new Date();//定义日期对象
+        var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年
+        var MM = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+        var dd = today.getDate();//通过日期对象的getDate()方法返回年
+        var hh = today.getHours();//通过日期对象的getHours方法返回小时
+        var mm = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
+        var ss = today.getSeconds();//通过日期对象的getSeconds方法返回秒
+        MM = checkTime(MM);
+        dd = checkTime(dd);
+        mm = checkTime(mm);
+        ss = checkTime(ss);
+        document.getElementById('nowDateTimeSpan').innerHTML = yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
+    }
+
+    function setInfo() {
+        document.getElementsByClassName("close")[0].click()
+        var idNum = document.getElementById("input_id").value;
+        var name = document.getElementById("input_name").value;
+        var location = document.getElementById("input_location").value;
+        document.getElementById('stuId').innerHTML = idNum;
+        document.getElementById('stuName').innerHTML = name;
+        document.getElementById('location').innerHTML = location;
+    }
+
+    function bombBox() {
+        var close = document.getElementsByClassName("close");
+        var form_1 = document.getElementsByClassName("form_1");
+        form_1[0].className = "form_1 open";
+        close[0].addEventListener('click', function () {
+            form_1[0].className = "form_1";
+        })
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
         }
-        function setCookie(name, value) {
-            var Days = 30;
-            var exp = new Date();
-            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
-            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
-        }
-        function setInfo() {
-            // 设置cookie
-            var name_arr = new Array();
-            name_arr[0] = "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d";
-            name_arr[1] = "PHPSESSID";
-            name_arr[2] = "XSRF-TOKEN";
-            name_arr[3] = "laravel3_session";
-            var value_arr = new Array();
-            value_arr[0] = "eyJpdiI6IjlKYUJ1enVpY1B4RHk0NDFEOFZvK0E9PSIsInZhbHVlIjoianoxQ0lsVkxuRmdsVFBuc1FrckRvQml6cjdCdlZYVFN6MUgyc1wvcDZjdzczK3YzOFR1Mnlhd2QrWkJKSGJmODhhcExxTVUzd2Y3c3FjdzFDcEVEYk11SXc1WDBFVFQ5OWtYclwvUndOeDUxK0FhSkhtRllZZXFJRzBrMG5uOEw0T2VKekhFUHNmcWx0R1o1Wk9ZVDR2RTNWblhvUTI3YURuMnRsclpRRmVTbms9IiwibWFjIjoiZDUyYmEzYWQzMDhiZDEzNzY0ZjcyZWQ3NmQ2NzJmODU4NzI4YmZmZjM1ZjlkOTQwOGQwY2QzYzIwN2Q2ZjRmZCJ9";
-            value_arr[1] = "4cc28e1799f559092057bb6fe903d1f0cb18ee15b076d2ee395e6b84d5340dde";
-            value_arr[2] = "eyJpdiI6InVERWxhYjVSdWM1OXFKYW9rOXZjVHc9PSIsInZhbHVlIjoiK2VoN1lWQVZSN0ZOQmNkcXpiQklzTXh5dzlwUkpyNnlQUkpYcGR2UHkxV1hNWHJXZTJLMjZuUDY2N2NlM00yVSIsIm1hYyI6IjQzODBiZjVhMTY1NGQ4YzFkZjlmNWM3MWM0OWRmMjU1MTU1OWNmNTE4YmVlNjRjNzZiOTc1ZmQzYmE1MzcyYzYifQ%3D%3D";
-            value_arr[3] = "eyJpdiI6IlArYjFleTJmUDQxcWVHV0xQR1EyTHc9PSIsInZhbHVlIjoiNGx6MHF5NlFkKzlwRjY4bTVXQVVIMWxoXC8xbzJ2RHk5XC9RaGNhc3lYY3FSRk1RNkU0SFd1TkRnZTgzZGNPZ2FUIiwibWFjIjoiM2ZkMzVjMWE3MWRhZjJlNGZiY2E0NWIzZjkwZDRhZDFkZTYzNzg2MmM4ZjIxMTI0OWFmNmE3YjRjMzc1MjIwZCJ9";
-            for (var j = 0; j < name_arr.length; j++) {
-                setCookie(name_arr[j], value_arr[j]);
-            }
-            // 发送get
-            var xhr = new XMLHttpRequest();//第一步：新建对象
-            xhr.open('GET', 'https://e-report.neu.edu.cn/incoming/register?entrance_id=19&actual_vehicle=0', true);//第二步：打开连接 将请求参数写在url中
-            xhr.send();//第三步：发送请求 将请求参数写在URL中
-            /**
-            * 获取数据后的处理程序
-            */
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var res = xhr.responseText;//获取到json字符串，解析
-                    log(res);
-                }
-            };
-            var idNum = document.getElementById("input_id").value;
-            var name = document.getElementById("input_name").value;
-            var location = document.getElementById("input_location").value;
-            document.getElementById('stuId').innerHTML = idNum;
-            document.getElementById('stuName').innerHTML = name;
-            document.getElementById('location').innerHTML = location;
-        }
-        function bombBox() {
-            var close = document.getElementsByClassName("close");
-            var form_1 = document.getElementsByClassName("form_1");
-            form_1[0].className = "form_1 open";
-            close[0].addEventListener('click', function () {
-                form_1[0].className = "form_1";
-            })
-        }
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i;
-            }
-            return i;
-        }
-    </script>
-    <br />
-    <br />
+        return i;
+    }
+</script>
+<br/>
+<br/>
 </body>
 
 </html>
